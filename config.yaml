@@ -1,0 +1,8 @@
+# Tira scraper run config. Override any of these with CLI flags.
+# A "category" is a Tira collection slug, served at /collections/<slug>/items/.
+out: tira_products.xlsx
+delay: 1.5          # seconds between requests (politeness)
+categories:
+  - fragrances      # closest to the DDF perfume dataset
+  # - makeup
+  # - skincare

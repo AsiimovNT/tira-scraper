@@ -1,0 +1,11 @@
+# Core
+scrapling[fetchers]>=0.4.9   # HTTP + stealth fetchers (pulls curl_cffi, browserforge, patchright, ...)
+playwright>=1.40             # imported by scrapling's response convertor
+pandas>=2.0
+openpyxl>=3.1
+pyyaml>=6.0
+
+# Dev
+pytest>=8.0
+
+# After installing, fetch the stealth browser once:  python -m scrapling install
