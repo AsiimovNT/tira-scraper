@@ -1,0 +1,20 @@
+# Convenience wrapper so you don't have to type long `docker run` lines.
+#
+#   docker compose run --rm scraper                          # uses config.yaml
+#   docker compose run --rm scraper --categories makeup      # override args
+#
+# The ./output folder on your host maps to /data in the container, so every
+# .xlsx the scraper writes shows up there.
+
+services:
+  scraper:
+    build:
+      context: .
+      args:
+        # Flip to "true" if you need the StealthyFetcher browser fallback.
+        INSTALL_BROWSER: "false"
+    image: tira-scraper
+    volumes:
+      - ./output:/data
+    # Default command if you run `docker compose run --rm scraper` with no args.
+    command: ["--config", "config.yaml", "--out", "/data/tira_products.xlsx"]
